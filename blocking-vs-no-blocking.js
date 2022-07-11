@@ -33,12 +33,10 @@ const copyFileNonBlocking = (source, dest) => {
     const startTime = Date.now()
     console.log("Starting to read file...")
     readFile(source, (err, data) => { // Asynchronous operation
-        console.log("Reading file...")
-
+        console.log(">  Reading file...")
         writeFile(dest, data, (_err) => {
-            console.log("Copying file...")
-            
-            logDuration('copyFileNonBlocking', startTime)
+            console.log(">>  Copying file...")    
+            logDuration('>> copyFileNonBlocking', startTime)
         })
     })
 }
